@@ -56,6 +56,17 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    private void goSignupActivity() {
+        Intent i = new Intent(this, SignupActivity.class);
+        startActivity(i);
+    }
+
+    private void goMainActivity() {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        finish();
+    }
+
     private void loginUser(String username, String password) {
         Log.i(TAG,"Attempting to login user" + username);
 
@@ -74,17 +85,5 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    public void goMainActivity() {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-        finish();
-    }
-
-    private void goSignupActivity() {
-        Intent i = new Intent(this, SignupActivity.class);
-        startActivity(i);
-        finish();
     }
 }
